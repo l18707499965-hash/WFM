@@ -8,7 +8,6 @@ export default {
         ignoreAtRules: ['tailwind', 'apply', 'layer', 'theme', 'custom-variant'],
       },
     ],
-    'color-hex-length': null,
     'hue-degree-notation': null,
     'import-notation': null,
     'lightness-notation': null,
