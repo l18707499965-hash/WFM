@@ -29,3 +29,10 @@
 - 禁止用"科技蓝 + 白卡片 + 蓝紫渐变"的万能模板——本品牌必须是黑红白的电影/影音气质
 - 不用尖锐圆角，统一中大圆角营造亲和、柔软的猫系气质
 - 避免粉色系（虽为猫主题，但品牌锚点是 Netflix 的红，不是萌系粉）
+
+## 多页官网结构与 SEO（官网版）
+- **站点形态**：软件官网（下载落地页），采用 Next.js App Router 服务端渲染，保证爬虫可读。
+- **页面架构**：首页 / 下载 / 功能介绍 / 使用教程 / 常见问题 / 帮助中心 / 版本更新 / 关于我们 / 用户协议 / 隐私政策 / 网站地图。
+- **SEO 规范**：每页独立 title/description/keywords/canonical + OpenGraph；站点级 Schema.org（Organization / WebSite / SoftwareApplication / FAQPage）；robots.txt 全量开放；sitemap.xml 覆盖全站；全文语义化标签（h1/h2/article/nav/ol）与面包屑。
+- **统计与分享**：全局引入百度统计（afterInteractive）；下载链接统一走 `SITE.downloadUrl`（apk 直链）。
+- **视觉统一**：所有内页复用 PageHero / DownloadCta / Footer 组件，保持黑红白品牌一致性与内链密度。
