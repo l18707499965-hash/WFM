@@ -10,7 +10,7 @@ const baseUrl = SITE.domain;
 export const metadata: Metadata = {
   title: {
     default: `${SITE.name} - ${SITE.tagline}`,
-    template: `%s | ${SITE.name} ${SITE.nameEn}`,
+    template: `${SITE.name} - %s | ${SITE.name} ${SITE.nameEn}`,
   },
   description: SITE.description,
   keywords: SITE.keywords,
