@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import PageHero from '@/components/site/PageHero';
 import DownloadCta from '@/components/site/DownloadCta';
-import { FEATURES } from '@/lib/content';
+import { FEATURES, POSTERS } from '@/lib/content';
 import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -42,6 +42,34 @@ export default function FeaturesPage() {
             <li><strong>亲子模式</strong>：专属儿童档案与家长锁，守护小朋友纯净观影。</li>
             <li><strong>轻量省电</strong>：优化解码性能，久看不卡、不发烫、更省电。</li>
           </ul>
+        </div>
+
+        {/* 精选片库海报墙 */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-extrabold text-white">精选片库</h2>
+          <p className="mt-2 text-sm text-neutral-400">以下热门作品，下载 App 即可立即观看。</p>
+          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {POSTERS.map((p) => (
+              <figure key={p.title} className="poster group overflow-hidden rounded-xl border border-white/10 bg-[#141414]">
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt={`${p.title} ${p.category}海报`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-80" />
+                  <span className="absolute right-2 top-2 flex items-center gap-1 rounded-md bg-black/70 px-1.5 py-0.5 text-xs font-bold text-[#ffb400] backdrop-blur">
+                    ★ {p.rating}
+                  </span>
+                  <figcaption className="absolute inset-x-0 bottom-0 p-3">
+                    <h3 className="text-sm font-bold text-white">{p.title}</h3>
+                    <p className="mt-0.5 text-xs text-neutral-300">{p.year} · {p.category}</p>
+                  </figcaption>
+                </div>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 

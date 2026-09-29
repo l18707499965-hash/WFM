@@ -1,18 +1,33 @@
-// 供官网展示的猫咪影视视觉素材（对象存储直链）
+// 供官网展示的猫咪影视视觉素材（本地静态资源，永久稳定）
 export const VISUAL = {
-  hero:
-    'https://coze-coding-project.tos.coze.site/coze_storage_7690493078351839283/image/generate_image_e39fc203-6a0e-41cd-9614-8355a6c8c555.jpeg',
-  royal:
-    'https://coze-coding-project.tos.coze.site/coze_storage_7690493078351839283/image/generate_image_fb38e9dc-e3ee-4b1a-8768-c468fe97f9ea.jpeg',
-  astro:
-    'https://coze-coding-project.tos.coze.site/coze_storage_7690493078351839283/image/generate_image_370e9230-8adb-482a-8cd3-12d89612e01a.jpeg',
-  ninja:
-    'https://coze-coding-project.tos.coze.site/coze_storage_7690493078351839283/image/generate_image_2cf7da71-4c0f-442f-b69d-c7afa756aede.jpeg',
-  jungle:
-    'https://coze-coding-project.tos.coze.site/coze_storage_7690493078351839283/image/generate_image_1716cc9f-40ba-400b-8223-2940d440969f.jpeg',
-  detective:
-    'https://coze-coding-project.tos.coze.site/coze_storage_7690493078351839283/image/generate_image_2391d843-c650-4cd7-999f-09e167eb3447.jpeg',
+  hero: '/posters/hero.jpeg',
+  royal: '/posters/royal.jpeg',
+  astro: '/posters/astro.jpeg',
+  ninja: '/posters/ninja.jpeg',
+  jungle: '/posters/jungle.jpeg',
+  detective: '/posters/detective.jpeg',
 } as const;
+
+// 海报条目
+export interface Poster {
+  img: string;
+  title: string;
+  category: string;
+  year: number;
+  rating: number;
+  tags: string[];
+}
+
+export const POSTERS: Poster[] = [
+  { img: '/posters/royal.jpeg', title: '猫王加冕', category: '原创电影', year: 2025, rating: 9.2, tags: ['史诗', '剧情'] },
+  { img: '/posters/ninja.jpeg', title: '月影忍猫', category: '猫咪动画', year: 2025, rating: 8.9, tags: ['热血', '动作'] },
+  { img: '/posters/jungle.jpeg', title: '丛林寻踪', category: '自然纪录', year: 2024, rating: 9.5, tags: ['治愈', '自然'] },
+  { img: '/posters/comedy.jpeg', title: '毛线大乱斗', category: '爆笑喜剧', year: 2025, rating: 8.6, tags: ['搞笑', '合家欢'] },
+  { img: '/posters/drama.jpeg', title: '雨夜窗边', category: '情感剧情', year: 2024, rating: 8.8, tags: ['文艺', '催泪'] },
+  { img: '/posters/sailor.jpeg', title: '喵长传奇', category: '航海冒险', year: 2025, rating: 9.0, tags: ['冒险', '励志'] },
+  { img: '/posters/astro.jpeg', title: '星辰喵航', category: '科幻喵剧', year: 2025, rating: 9.1, tags: ['科幻', '未来'] },
+  { img: '/posters/detective.jpeg', title: '雾巷神探', category: '悬疑推理', year: 2024, rating: 8.7, tags: ['悬疑', '推理'] },
+];
 
 // 功能介绍卡片
 export interface Feature {

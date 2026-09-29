@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import DownloadCta from '@/components/site/DownloadCta';
-import { FEATURES, VISUAL } from '@/lib/content';
+import { FEATURES, POSTERS, VISUAL } from '@/lib/content';
 import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -98,26 +98,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 内容分类预览 */}
+      {/* 内容分类预览 - 海报墙 */}
       <section className="border-y border-white/10 bg-[#0d0d0d] py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">海量猫片，尽收眼底</h2>
-            <Link href="/features" className="text-sm text-neutral-400 transition hover:text-[#e50914]">全部内容 →</Link>
+            <div>
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">海量猫片，尽收眼底</h2>
+              <p className="mt-2 text-sm text-neutral-400">原创电影、动画、纪录片、喜剧、科幻、悬疑，每日上新。</p>
+            </div>
+            <Link href="/features" className="hidden shrink-0 text-sm text-neutral-400 transition hover:text-[#e50914] sm:inline">全部内容 →</Link>
           </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {[
-              { img: VISUAL.royal, label: '原创电影' },
-              { img: VISUAL.astro, label: '科幻喵剧' },
-              { img: VISUAL.ninja, label: '猫咪动画' },
-              { img: VISUAL.jungle, label: '自然纪录' },
-            ].map((it) => (
-              <figure key={it.label} className="poster overflow-hidden rounded-xl border border-white/10">
-                <img src={it.img} alt={`${it.label} 分类海报`} loading="lazy" className="aspect-[3/4] w-full object-cover" />
-                <figcaption className="bg-[#141414] px-3 py-2 text-sm font-semibold text-white">{it.label}</figcaption>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {POSTERS.map((p) => (
+              <figure key={p.title} className="poster group overflow-hidden rounded-xl border border-white/10 bg-[#141414]">
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt={`${p.title} ${p.category}海报 - ${SITE.name}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-80" />
+                  <span className="absolute right-2 top-2 flex items-center gap-1 rounded-md bg-black/70 px-1.5 py-0.5 text-xs font-bold text-[#ffb400] backdrop-blur">
+                    <svg className="h-3 w-3 fill-current" viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7L12 17.8 5.8 21.2l1.6-7L2 9.5l7.1-.6z"/></svg>
+                    {p.rating}
+                  </span>
+                  <figcaption className="absolute inset-x-0 bottom-0 p-3">
+                    <h3 className="text-sm font-bold text-white">{p.title}</h3>
+                    <p className="mt-0.5 text-xs text-neutral-300">{p.year} · {p.category}</p>
+                    <div className="mt-1.5 flex flex-wrap gap-1">
+                      {p.tags.map((t) => (
+                        <span key={t} className="rounded border border-white/20 px-1.5 py-0.5 text-[10px] text-neutral-300">{t}</span>
+                      ))}
+                    </div>
+                  </figcaption>
+                </div>
               </figure>
             ))}
           </div>
+          <p className="mt-6 text-center sm:hidden">
+            <Link href="/features" className="text-sm text-[#e50914]">查看全部内容 →</Link>
+          </p>
         </div>
       </section>
 
