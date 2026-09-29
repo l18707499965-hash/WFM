@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = pageMeta({
   title: '下载网飞猫安卓版',
-  description: `下载${SITE.name}（${SITE.nameEn}）安卓版 App。免费安装${SITE.version}，${SITE.appSize}，支持 Android 5.0+，海量猫咪影视资源等你探索。`,
+  description: `下载${SITE.name}（${SITE.nameEn}）安卓版 App。免费安装${SITE.version}，${SITE.appSize}，支持 Android 5.0+，海量电影、电视剧与短剧资源等你探索。`,
   keywords: ['网飞猫下载', '网飞猫安卓版', '网飞猫apk', '免费影视App', '猫片软件下载'],
   path: '/download',
 });
@@ -36,7 +36,7 @@ export default function DownloadPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }} />
       <PageHero
         title={`下载 ${SITE.name} 安卓版`}
-        description="一键安装，畅享海量猫咪影视内容。免费下载、无需注册即可体验核心功能。"
+        description="一键安装，畅享海量电影、电视剧与短剧内容。免费下载、无需注册即可体验核心功能。"
         crumb="下载"
       />
 
@@ -100,7 +100,7 @@ export default function DownloadPage() {
               <li>点击上方「下载 APK」按钮，等待文件下载完成。</li>
               <li>下载完成后，打开安装包，点击「安装」。</li>
               <li>若提示「未知来源」，请在系统设置中允许安装来自此来源的应用。</li>
-              <li>安装完成后打开软件，即可开始浏览猫咪内容。</li>
+              <li>安装完成后打开软件，即可开始搜索、浏览并在线观看影视内容。</li>
             </ol>
             <h2>常见安装问题</h2>
             <ul className="text-neutral-300">

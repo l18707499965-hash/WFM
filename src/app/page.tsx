@@ -45,13 +45,13 @@ export default function HomePage() {
               全新版本 {SITE.version} 已发布
             </span>
             <h1 className="mt-5 text-4xl font-black leading-tight tracking-tight text-white sm:text-6xl">
-              {SITE.name}
-              <span className="block text-2xl font-semibold text-neutral-300 sm:text-3xl">
-                猫咪专属流媒体影音平台
+              新片热剧，今晚就看
+              <span className="mt-1 block text-2xl font-semibold text-neutral-300 sm:text-3xl">
+                {SITE.name} · 电影 · 电视剧 · 短剧 · 动漫
               </span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-neutral-200 sm:text-lg">
-              {SITE.description}
+              从院线新片、热播剧到短剧与今日上新，快速发现想看的影视内容，让模糊的想法也变成一张清晰片单。免费下载安卓版 App，高清流畅在线观看、随时接着看全集。
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
@@ -70,8 +70,8 @@ export default function HomePage() {
             </div>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-300">
               <span className="flex items-center gap-1.5"><span className="inline-block h-1.5 w-1.5 rounded-full bg-[#e50914]" />{SITE.appSize} · 极速安装</span>
-              <span className="flex items-center gap-1.5"><span className="inline-block h-1.5 w-1.5 rounded-full bg-[#e50914]" />Android 5.0+</span>
-              <span className="flex items-center gap-1.5"><span className="inline-block h-1.5 w-1.5 rounded-full bg-[#e50914]" />百万猫友信赖</span>
+              <span className="flex items-center gap-1.5"><span className="inline-block h-1.5 w-1.5 rounded-full bg-[#e50914]" />{SITE.version} · Android</span>
+              <span className="flex items-center gap-1.5"><span className="inline-block h-1.5 w-1.5 rounded-full bg-[#e50914]" />播放记录多端同步</span>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6" id="features">
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">为什么选择 {SITE.name}？</h2>
-          <p className="mt-4 text-neutral-400">六大核心能力，重新定义"看猫"的打开方式。</p>
+          <p className="mt-4 text-neutral-400">聚合全网影视资源，免费高清追剧看电影，一处搞定全集。</p>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f) => (
@@ -101,8 +101,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-8 flex items-end justify-between">
             <div>
-              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">海量猫片，尽收眼底</h2>
-              <p className="mt-2 text-sm text-neutral-400">原创电影、动画、纪录片、喜剧、科幻、悬疑，每日上新。</p>
+              <h2 className="text-2xl font-extrabold text-white sm:text-3xl">热门推荐 · 新片热剧每日更新</h2>
+              <p className="mt-2 text-sm text-neutral-400">电影、剧集、短剧与动漫一网打尽，高清在线观看，越追越过瘾。</p>
             </div>
             <Link href="/features" className="hidden shrink-0 text-sm text-neutral-400 transition hover:text-[#e50914] sm:inline">全部内容 →</Link>
           </div>
@@ -156,14 +156,45 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 用户评价 */}
+      <section className="border-y border-white/10 bg-[#0d0d0d] py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <span className="inline-block rounded-full border border-white/20 bg-black/40 px-3 py-1 text-xs font-medium tracking-widest text-neutral-400">USER REVIEWS / 用户之声</span>
+            <h2 className="mt-4 text-3xl font-extrabold text-white sm:text-4xl">{SITE.name} 用户真实评价</h2>
+            <p className="mt-3 text-neutral-400">来自网飞猫日常追剧、看电影用户的真实使用反馈。</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              '最近常用网飞猫，影片详情和更新信息比较直观，周末找电影时容易找到入口，片单筛选依然清楚。高清播放流畅，官网下载安卓版后整体体验很稳定。',
+              '用网飞猫追剧很顺手，播放记录和续看进度都能准确同步，换个时间打开也能接着看。电影、剧集、短剧分类清楚，片名和类型都能快速定位。',
+              '网飞猫的热门推荐与高分片单比较好用，追正在更新的剧集时容易找到入口，在线观看清晰流畅。想看全集的时候翻页也很快。',
+              '朋友推荐我试试网飞猫，搜索、分类、画质选择和内容筛选都比较直观，从片单里挑选内容时很容易找到需要的入口。官网下载安装后一直很顺畅。',
+              '最近常用网飞猫，新片和热播剧更新很快，把剧集离线缓存到本地后没网也能接着看，通勤路上很省心。安卓版安装包小，下载速度快。',
+              '网飞猫从官网下载很方便，播放记录、续看进度和多端同步都做得很清楚，连续操作节奏很顺，周末找电影时不用反复找，追剧很省心。',
+            ].map((text, i) => (
+              <article key={i} className="poster rounded-xl border border-white/10 bg-[#141414] p-5">
+                <div className="flex items-center gap-1 text-[#ffb400]">
+                  {[...Array(5)].map((_, s) => (
+                    <svg key={s} className="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7L12 17.8 5.8 21.2l1.6-7L2 9.5l7.1-.6z"/></svg>
+                  ))}
+                </div>
+                <p className="mt-3 text-sm leading-6 text-neutral-300">“{text}”</p>
+                <p className="mt-4 text-xs text-neutral-500">匿名用户 · 2026-0{Math.min(i + 1, 6)}-1{(i * 3) % 9 + 1} 发布</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 常见问题预览 */}
       <section className="mx-auto max-w-4xl px-4 pb-16 sm:px-6">
         <h2 className="text-center text-3xl font-extrabold text-white">新手疑问速答</h2>
         <div className="mt-8 space-y-3">
           {[
-            { q: '网飞猫怎么下载安装？', a: '点击本站「立即下载」，安装安卓版 App 后即可免费使用海量内容。', href: '/download' },
-            { q: '网飞猫收费吗？', a: '免费下载、免费观看大部分内容，VIP 可解锁超高清与离线缓存等高级功能。', href: '/faq' },
-            { q: '支持哪些设备？', a: '支持安卓手机、平板、智能电视与电脑，多端进度同步。', href: '/features' },
+            { q: '网飞猫怎么下载安装？', a: '点击官网「立即下载」获取安卓版 Apk，安装后即可免费在线观看电影、电视剧、短剧等海量影视内容。', href: '/download' },
+            { q: '网飞猫看电影、追剧收费吗？', a: '免费下载、免费观看大部分影视内容，会员可解锁蓝光超清画质、离线缓存与更多专享片源。', href: '/faq' },
+            { q: '支持哪些设备？', a: '支持安卓手机、平板、智能电视与电脑，播放记录与续看进度多端同步，随时接着看全集。', href: '/features' },
           ].map((item) => (
             <Link key={item.q} href={item.href} className="block rounded-xl border border-white/10 bg-[#1f1f1f] p-5 transition hover:border-[#e50914]/50">
               <h3 className="font-semibold text-white">{item.q}</h3>

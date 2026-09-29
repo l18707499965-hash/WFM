@@ -15,7 +15,7 @@ const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: '网飞猫是什么？收费吗？', acceptedAnswer: { '@type': 'Answer', text: '网飞猫是专注猫咪视角的流媒体影音软件，免费下载、免费观看大部分内容，VIP 可解锁 4K 超高清与离线缓存。' } },
+    { '@type': 'Question', name: '网飞猫是什么？收费吗？', acceptedAnswer: { '@type': 'Answer', text: '网飞猫是一款免费影视追剧软件，聚合电影、电视剧、短剧与动漫资源，免费下载、免费观看大部分内容，VIP 可解锁蓝光超清画质与离线缓存。' } },
     { '@type': 'Question', name: '支持哪些设备？', acceptedAnswer: { '@type': 'Answer', text: '支持安卓手机、平板、智能电视与电脑，多端同步播放进度。' } },
     { '@type': 'Question', name: '如何下载安装网飞猫？', acceptedAnswer: { '@type': 'Answer', text: '在下载页点击下载 APK 安装即可，系统提示未知来源时在设置中允许安装。' } },
     { '@type': 'Question', name: '可以离线缓存吗？', acceptedAnswer: { '@type': 'Answer', text: '可以，在有网络时点击下载按钮缓存到本地，无网也能观看。' } },

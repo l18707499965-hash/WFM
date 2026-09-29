@@ -10,10 +10,10 @@ export default function DownloadCta() {
         <div className="relative flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
           <div>
             <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-              立即下载 {SITE.name}，开启猫片盛宴
+              立即下载 {SITE.name}，开启看片之旅
             </h2>
             <p className="mt-3 max-w-xl text-neutral-400">
-              全新 {SITE.nameEn} App 支持安卓海量机型，极速秒开、智能推荐。一键安装，随时随地看猫。
+              全新 {SITE.nameEn} App 支持安卓海量机型，极速秒开、智能推荐。一键安装，随时随地追剧。
             </p>
           </div>
           <Link

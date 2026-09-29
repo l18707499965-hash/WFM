@@ -12,7 +12,7 @@ export default function Footer() {
               <span className="text-lg font-extrabold text-white">{SITE.name}</span>
             </Link>
             <p className="mt-4 text-sm leading-6 text-neutral-400">
-              {SITE.tagline}。聚合海量猫咪影像内容，4K HDR、杜比全景声，多设备无缝观影。
+              {SITE.tagline}。聚合海量影视内容，高清在线观看，播放记录多端无缝同步。
             </p>
             <p className="mt-4 text-xs text-neutral-500">
               服务支持：{SITE.nameEn} · 备案中

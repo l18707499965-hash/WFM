@@ -18,7 +18,7 @@ export default function NotFound() {
         页面迷路了
       </h1>
       <p className="mt-4 max-w-md text-base leading-7 text-neutral-300">
-        抱歉，您访问的页面不存在或已被移除。回到我们的猫咪观影宇宙，继续探索海量内容吧。
+        抱歉，您访问的页面不存在或已被移除。回到首页继续探索海量电影、电视剧与短剧内容。
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
         <Link

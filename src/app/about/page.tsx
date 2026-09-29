@@ -4,7 +4,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = pageMeta({
   title: '关于我们',
-  description: `了解${SITE.name}（${SITE.nameEn}）品牌愿景、使命与团队故事。专注猫咪视角的流媒体平台。`,
+  description: `了解${SITE.name}（${SITE.nameEn}）品牌愿景、使命与团队故事。一站在线看电影、追剧集的免费安卓影视应用。`,
   keywords: ['网飞猫关于我们', '网飞猫公司', 'NCAT品牌'],
   path: '/about',
 });
@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="prose-site rounded-2xl border border-white/10 bg-[#141414] p-8 sm:p-10">
           <h2>品牌故事</h2>
           <p>
-            {SITE.name}（{SITE.nameEn}）诞生于一个朴素的想法：猫咪是当代年轻人最重要的精神陪伴，却缺少一个真正以"猫咪"为叙事中心的流媒体世界。于是我们打造了集原创剧集、电影、纪录片与动画于一体的猫咪专属平台。
+            {SITE.name}（{SITE.nameEn}）诞生于一个朴素的想法：把最新电影、电视剧、短剧与动漫汇聚到一处，让用户免费、高清、流畅地在线观看。于是我们打造了集全网影视资源于一体的安卓追剧应用，支持搜索、分类、播放记录与多端同步，让想看的内容随时都能找到。
           </p>
           <h2>我们的使命</h2>
           <p>

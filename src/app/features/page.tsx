@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = pageMeta({
   title: '功能介绍',
-  description: `了解${SITE.name}全部核心功能：海量猫咪片库、4K HDR 超清画质、智能推荐、多设备同步、极速秒开与离线缓存。`,
+  description: `了解${SITE.name}全部核心功能：海量影视片库、高清蓝光画质、智能追剧推荐、播放记录多端同步、极速秒开与离线缓存。`,
   keywords: ['网飞猫功能', '猫片App', '4K观影', '影视软件功能'],
   path: '/features',
 });
@@ -36,7 +36,7 @@ export default function FeaturesPage() {
         <div className="prose-site mt-14 rounded-2xl border border-white/10 bg-[#141414] p-8">
           <h2>不止于此，更多亮点</h2>
           <ul>
-            <li><strong>每日更新</strong>：追踪全球猫咪内容创作者，热剧新片第一时间上线。</li>
+            <li><strong>每日更新</strong>：聚合全网新片、热播剧与短剧，第一时间同步最新影视内容。</li>
             <li><strong>个性推荐</strong>：千人千面的智能算法，为你精准匹配对味内容。</li>
             <li><strong>观看记录</strong>：多设备同步进度，回家接着看，一点也不浪费。</li>
             <li><strong>亲子模式</strong>：专属儿童档案与家长锁，守护小朋友纯净观影。</li>
