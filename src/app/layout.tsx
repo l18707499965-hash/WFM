@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/site/Header';
@@ -16,7 +16,12 @@ export const metadata: Metadata = {
   keywords: SITE.keywords,
   applicationName: SITE.name,
   authors: [{ name: `${SITE.name} 团队` }],
+  category: '影视娱乐',
   alternates: { canonical: baseUrl },
+  other: {
+    'applicable-device': 'pc,mobile',
+    'format-detection': 'telephone=no',
+  },
   metadataBase: new URL(baseUrl),
   openGraph: {
     type: 'website',
@@ -48,6 +53,13 @@ export const metadata: Metadata = {
   verification: {
     // 预留：可在此填入 Google/Bing 等站长验证码
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#e50914',
+  colorScheme: 'dark',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 const organizationJsonLd = {
