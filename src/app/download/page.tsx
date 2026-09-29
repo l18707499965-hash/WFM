@@ -1,15 +1,15 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import Link from 'next/link';
 import PageHero from '@/components/site/PageHero';
 import DownloadCta from '@/components/site/DownloadCta';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '下载网飞猫安卓版',
   description: `下载${SITE.name}（${SITE.nameEn}）安卓版 App。免费安装${SITE.version}，${SITE.appSize}，支持 Android 5.0+，海量猫咪影视资源等你探索。`,
   keywords: ['网飞猫下载', '网飞猫安卓版', '网飞猫apk', '免费影视App', '猫片软件下载'],
-  alternates: { canonical: `${SITE.domain}/download` },
-};
+  path: '/download',
+});
 
 const softwareJsonLd = {
   '@context': 'https://schema.org',

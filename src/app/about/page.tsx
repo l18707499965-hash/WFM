@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHero from '@/components/site/PageHero';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '关于我们',
   description: `了解${SITE.name}（${SITE.nameEn}）品牌愿景、使命与团队故事。专注猫咪视角的流媒体平台。`,
   keywords: ['网飞猫关于我们', '网飞猫公司', 'NCAT品牌'],
-  alternates: { canonical: `${SITE.domain}/about` },
-};
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (

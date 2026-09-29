@@ -1,15 +1,15 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHero from '@/components/site/PageHero';
 import DownloadCta from '@/components/site/DownloadCta';
 import { FEATURES, POSTERS } from '@/lib/content';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '功能介绍',
   description: `了解${SITE.name}全部核心功能：海量猫咪片库、4K HDR 超清画质、智能推荐、多设备同步、极速秒开与离线缓存。`,
   keywords: ['网飞猫功能', '猫片App', '4K观影', '影视软件功能'],
-  alternates: { canonical: `${SITE.domain}/features` },
-};
+  path: '/features',
+});
 
 export default function FeaturesPage() {
   return (

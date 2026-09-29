@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHero from '@/components/site/PageHero';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '用户协议',
   description: `网飞猫用户服务协议，包括服务说明、用户行为规范、知识产权与免责声明等内容。`,
-  alternates: { canonical: `${SITE.domain}/terms` },
-};
+  path: '/terms',
+});
 
 export default function TermsPage() {
   return (

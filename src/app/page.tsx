@@ -1,16 +1,14 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import DownloadCta from '@/components/site/DownloadCta';
 import { FEATURES, POSTERS, VISUAL } from '@/lib/content';
+import { pageMeta } from '@/lib/seo';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: `${SITE.name} - ${SITE.tagline}`,
   description: SITE.description,
-  keywords: SITE.keywords,
-  openGraph: { type: 'website', title: `${SITE.name} - ${SITE.tagline}`, description: SITE.description },
-  alternates: { canonical: SITE.domain },
-};
+  path: '/',
+});
 
 const softwareJsonLd = {
   '@context': 'https://schema.org',

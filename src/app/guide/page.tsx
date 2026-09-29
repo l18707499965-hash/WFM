@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHero from '@/components/site/PageHero';
 import DownloadCta from '@/components/site/DownloadCta';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '使用教程',
   description: `网飞猫使用教程：下载安装、注册登录、搜索观影、离线下载与多设备同步的完整图文步骤，新手也能快速上手。`,
   keywords: ['网飞猫教程', '网飞猫怎么用', '影视App使用教程', '离线下载'],
-  alternates: { canonical: `${SITE.domain}/guide` },
-};
+  path: '/guide',
+});
 
 const STEPS = [
   {

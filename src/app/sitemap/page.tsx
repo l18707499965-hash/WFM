@@ -1,13 +1,14 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import Link from 'next/link';
 import PageHero from '@/components/site/PageHero';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '网站地图',
   description: `网飞猫官网全部页面的索引，方便快速导航与搜索引擎收录。`,
   robots: { index: false, follow: true },
-};
+  path: '/sitemap',
+});
 
 const GROUPS: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
   {

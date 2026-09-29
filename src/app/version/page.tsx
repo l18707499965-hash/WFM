@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHero from '@/components/site/PageHero';
 import DownloadCta from '@/components/site/DownloadCta';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '版本更新记录',
   description: `网飞猫版本更新日志，了解最新版本 v2.6.1 带来的新功能与优化内容。`,
   keywords: ['网飞猫版本', '网飞猫更新日志', '影视App更新'],
-  alternates: { canonical: `${SITE.domain}/version` },
-};
+  path: '/version',
+});
 
 const LOGS = [
   { v: 'v2.6.1', date: '2024-12-18', items: ['优化播放器解码，起播提速 40%', '修复部分机型离线缓存异常', '增强推荐算法精准度'] },

@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHero from '@/components/site/PageHero';
 import DownloadCta from '@/components/site/DownloadCta';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '帮助中心',
   description: `网飞猫帮助中心：覆盖下载安装、账号、播放、离线缓存等常见问题，并提供 7×24 小时客服支持。`,
   keywords: ['网飞猫帮助中心', '网飞猫客服', '影视软件帮助'],
-  alternates: { canonical: `${SITE.domain}/help` },
-};
+  path: '/help',
+});
 
 export default function HelpPage() {
   return (

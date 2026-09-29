@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHero from '@/components/site/PageHero';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '隐私政策',
   description: `网飞猫隐私政策，说明我们如何收集、使用与保护您的个人信息。`,
-  alternates: { canonical: `${SITE.domain}/privacy` },
-};
+  path: '/privacy',
+});
 
 export default function PrivacyPage() {
   return (

@@ -1,15 +1,15 @@
-import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHero from '@/components/site/PageHero';
 import DownloadCta from '@/components/site/DownloadCta';
 import FaqList from '@/components/site/FaqList';
 import { SITE } from '@/lib/site';
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: '常见问题（FAQ）',
   description: `网飞猫常见问题解答汇总：收费、设备、下载、离线缓存、账号与播放等高频疑问一键解决。`,
   keywords: ['网飞猫常见问题', '网飞猫FAQ', '网飞猫收费', '影视App答疑'],
-  alternates: { canonical: `${SITE.domain}/faq` },
-};
+  path: '/faq',
+});
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
