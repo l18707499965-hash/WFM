@@ -27,7 +27,7 @@ export const SITE = {
     '蓝光画质',
   ],
   domain: 'https://7d514e5b-cda7-4bd9-ae26-3d006d70ec26.dev.coze.site',
-  downloadUrl: 'https://bos.liao-hai.chat/yxq/网飞猫.apk',
+  downloadUrl: 'https://qjj.pxxpxxpxx.com/yg-api/download/r/BBfcuQtN',
   baiduAnalyticsId: '3daf2e3d4b3820b61c351096ec0fa903',
   version: 'v2.6.1',
   appSize: '约 68 MB',
