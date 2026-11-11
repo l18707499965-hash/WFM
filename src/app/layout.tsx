@@ -93,8 +93,15 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <div className="site-shell">
+          {/* 无障碍跳转主内容链接（SEO 与可访问性加分） */}
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-[#e50914] focus:px-4 focus:py-2 focus:text-white focus:outline-none"
+          >
+            跳至主要内容
+          </a>
           <Header />
-          <main className="site-main">{children}</main>
+          <main id="main" className="site-main">{children}</main>
           <Footer />
         </div>
 

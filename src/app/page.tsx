@@ -24,10 +24,30 @@ const softwareJsonLd = {
   url: SITE.downloadUrl,
 };
 
+/** 热门海报墙 ItemList 结构化数据：强化列表富结果与图片搜索 */
+const posterListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: '热门推荐 · 新片热剧每日更新',
+  itemListOrder: 'https://schema.org/ItemListOrderDescending',
+  numberOfItems: POSTERS.length,
+  itemListElement: POSTERS.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'CreativeWork',
+      name: p.title,
+      image: `${SITE.domain}${p.img}`,
+      genre: p.category,
+    },
+  })),
+};
+
 export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(posterListJsonLd) }} />
 
       {/* Hero */}
       <section className="relative flex min-h-[88vh] items-center overflow-hidden">
@@ -140,20 +160,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 数据与内链 */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <div className="grid gap-5 md:grid-cols-3">
+      {/* 数据与内链：dl/dt/dd 语义化表达「数据-说明」层级 */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6" aria-labelledby="stats-title">
+        <h2 id="stats-title" className="sr-only">平台数据</h2>
+        <dl className="grid gap-5 md:grid-cols-3">
           {[
             { num: '10万+', label: '在架影音内容', href: '/features' },
             { num: '88万', label: '活跃猫友用户', href: '/about' },
             { num: '4.8 分', label: '应用商店评分', href: '/faq' },
           ].map((s) => (
-            <Link key={s.label} href={s.href} className="poster rounded-xl border border-white/10 bg-[#141414] p-8 text-center">
-              <p className="text-4xl font-black text-[#e50914]">{s.num}</p>
-              <p className="mt-2 text-neutral-400">{s.label}</p>
-            </Link>
+            <div key={s.label} className="poster rounded-xl border border-white/10 bg-[#141414] p-8 text-center">
+              <dt className="text-4xl font-black text-[#e50914]">{s.num}</dt>
+              <dd className="mt-2">
+                <Link href={s.href} className="text-neutral-400 transition hover:text-[#e50914]">{s.label}</Link>
+              </dd>
+            </div>
           ))}
-        </div>
+        </dl>
       </section>
 
       {/* 用户评价 */}
@@ -180,7 +203,9 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="mt-3 text-sm leading-6 text-neutral-300">“{text}”</p>
-                <p className="mt-4 text-xs text-neutral-500">匿名用户 · 2026-0{Math.min(i + 1, 6)}-1{(i * 3) % 9 + 1} 发布</p>
+                <footer className="mt-4 text-xs text-neutral-500">
+                  匿名用户 · <time dateTime={`2026-0${Math.min(i + 1, 6)}-1${(i * 3) % 9 + 1}`}>2026-0{Math.min(i + 1, 6)}-1{(i * 3) % 9 + 1}</time> 发布
+                </footer>
               </article>
             ))}
           </div>
