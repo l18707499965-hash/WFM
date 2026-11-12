@@ -51,7 +51,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // 预留：可在此填入 Google/Bing 等站长验证码
+    // 百度站长平台站点验证
+    other: {
+      'baidu-site-verification': 'codeva-2MAdoJNVX8',
+    },
   },
 };
 
