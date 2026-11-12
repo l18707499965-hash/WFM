@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     images: [`${baseUrl}${SITE.logo}`],
   },
   icons: { icon: SITE.icon },
+  referrer: 'origin-when-cross-origin',
   robots: {
     index: true,
     follow: true,
@@ -116,6 +117,20 @@ export default function RootLayout({
             hm.src = "https://hm.baidu.com/hm.js?${SITE.baiduAnalyticsId}";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
+          })();
+        ` }} />
+        {/* 百度主动推送（实时）：每次访问自动把当前页面 URL 推给百度，加速收录 */}
+        <Script id="baidu-push" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
+          (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+              bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+              bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(bp, s);
           })();
         ` }} />
       </body>
